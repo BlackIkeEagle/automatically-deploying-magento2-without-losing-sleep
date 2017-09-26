@@ -270,6 +270,94 @@
                 </section>
 
                 <section data-background="assets/KUKA_Industrial_Robots_IR-darker.jpg">
+                    <section>
+                        <h2>topics</h2>
+                        <ul>
+                            <li>our way of hosting</li>
+                            <li>tools used</li>
+                            <li>the setup</li>
+                            <li style="color: #F80"><strong>the flow</strong></li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>preparation on the build server</h2>
+                    </section>
+
+                    <section>
+                        <ul>
+                            <li>composer install --no-dev --opimize-autoloader</li>
+                            <li>clean install magento</li>
+                            <li>magento cache:flush</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <ul>
+                            <li>replace tables with data from target setup
+                                <ul>
+                                    <li>core_config_data</li>
+                                    <li>translation</li>
+                                    <li>store_website</li>
+                                    <li>store_group</li>
+                                    <li>store</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <ul>
+                            <li>magento setup:upgrade</li>
+                            <li>magento setup:static-content:deploy</li>
+                            <li>magento setup:di:compile</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>package is a zip file</h2>
+                        <p>regular zipfile *with* symlinks</p>
+                    </section>
+
+                    <section>
+                        <h2>server folder structure</h2>
+                        <img style="border: 0; background: transparent; box-shadow: 0 0;" src="assets/Screenshot_20170926_174301.png" />
+                    </section>
+
+                    <section>
+                        <h2>actions done on the server</h2>
+                    </section>
+
+                    <section>
+                        <ul>
+                            <li>part of the folder sturcture is created</li>
+                            <li>symlink env.php</li>
+                            <li>symlink media</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <ul>
+                            <li>harden permissions</li>
+                            <li>magento setup:upgrade --keep-generated</li>
+                            <li>magento indexer:reindex</li>
+                            <li>magento setup:cron:run</li>
+                            <li>magento cron:run</li>
+                            <li>magento cache:flush</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>on success the document root configuration is changed</h2>
+                    </section>
+
+                    <section>
+                        <h2>primo victoria</h2>
+                        <img style="border: 0; background: transparent; box-shadow: 0 0;" src="assets/Screenshot_20170926_175209.png" />
+                    </section>
+                </section>
+
+                <section data-background="assets/KUKA_Industrial_Robots_IR-darker.jpg">
                     <section data-transition="none">
                         <div style="width: 50%; display: inline-block; margin-right: 2%; vertical-align: top;">
                             <h2 style="text-align: left">Questions?</h2>
