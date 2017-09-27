@@ -310,6 +310,13 @@
                             <li>clean install magento</li>
                             <li>magento cache:flush</li>
                         </ul>
+                        <aside class="notes">
+                            <ul>
+                                <li>no dev deps and optimized autoloader</li>
+                                <li>clean install magento to reduce transfer between prod and packaging</li>
+                                <li>flush cache to avoid errors later</li>
+                            </ul>
+                        </aside>
                     </section>
 
                     <section>
@@ -324,6 +331,13 @@
                                 </ul>
                             </li>
                         </ul>
+                        <aside class="notes">
+                            <ul>
+                                <li>core_config_data = magento settings</li>
+                                <li>translation = things added by inline translation</li>
+                                <li>store_website, store_group, store = store configuration</li>
+                            </ul>
+                        </aside>
                     </section>
 
                     <section>
@@ -332,16 +346,41 @@
                             <li>magento setup:static-content:deploy</li>
                             <li>magento setup:di:compile</li>
                         </ul>
+                        <aside class="notes">
+                            <ul>
+                                <li>update th esetup</li>
+                                <li>static contet deploy = prepare static content, js, css for defined languages</li>
+                                <li>di compile = prepare di for this setup</li>
+                            </ul>
+                        </aside>
                     </section>
 
                     <section>
                         <h2>package is a zip file</h2>
                         <p>regular zipfile *with* symlinks</p>
+                        <aside class="notes">
+                            <ul>
+                                <li>we used tar</li>
+                                <li>had permission issues with tar (acl related)</li>
+                                <li>zip can have symlinks and zero permission issues :)</li>
+                            </ul>
+                        </aside>
                     </section>
 
                     <section>
                         <h2>server folder structure</h2>
                         <img style="border: 0; background: transparent; box-shadow: 0 0;" src="assets/Screenshot_20170926_174301.png" />
+                        <aside class="notes">
+                            <ul>
+                                <li>mage2cron = added in crontab</li>
+                                <li>conf cronroot = set location of bin/magento</li>
+                                <li>con nginx.conf = set docroot for nginx</li>
+                                <li>logs = nginx logs</li>
+                                <li>shared env.php = prod env config</li>
+                                <li>shared media = prod media</li>
+                                <li>versions = available versions</li>
+                            </ul>
+                        </aside>
                     </section>
 
                     <section>
@@ -365,6 +404,13 @@
                             <li>magento cron:run</li>
                             <li>magento cache:flush</li>
                         </ul>
+                        <aside class="notes">
+                            <ul>
+                                <li>permissions is a custom script hardening the filesystem permissions of the magento install</li>
+                                <li>we already generated di so keep it</li>
+                                <li>cache flush to destroy stale data</li>
+                            </ul>
+                        </aside>
                     </section>
 
                     <section>
